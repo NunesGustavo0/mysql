@@ -1,2 +1,2 @@
 # mysql
-Exercícios codigo menores em mysql
+Exercícios e códigos menores em mysql
