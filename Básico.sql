@@ -70,3 +70,8 @@ WHERE person_id = 1;
 
 DELETE FROM person
 WHERE person_id = 2;
+
+--Outra forma melhor de fazer update em data
+UPDATE person
+SET birth_date = str_to_date('DEC-21-1980', '%b-%d-%Y')
+WHERE person_id = 1;
