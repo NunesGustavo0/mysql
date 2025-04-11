@@ -28,3 +28,13 @@ update cliente
 set clibaicodigo = 2
 where clicodigo = 1;
 '1', 'ADRIANÓPOLIS', '1', '10549'
+	
+delimiter $$
+create trigger tg_monitora_preco before insert on produto
+for each row
+begin
+	if new.procusto >= new.propreco then
+		SIGNAL SQLSTATE '855555' SET MESSAGE_TEXT = 'Erro! Custo maior ou igual ao produto';
+    end if;
+end$$
+delimiter ;
